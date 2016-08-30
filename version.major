@@ -1,0 +1,6 @@
+Ophiuchus Archivist Rails Webscraper Topaz 0
+
+Version 0 is to lay the framework for development.  More specifically, the goal
+is to create all known models, controllers and views along with their test
+cases. Nothing will be implemented upon completion of version 0 except for the
+unit tests and some integration tests.
