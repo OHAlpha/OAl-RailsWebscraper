@@ -1,0 +1,5 @@
+Ophiuchus Archivist Rails Webscraper Topaz 0.0
+
+The goal of this playground is to implement the extended funtions of
+ActiveRecord::Base to get ActiveRecord functionality to work with added
+attributes.
