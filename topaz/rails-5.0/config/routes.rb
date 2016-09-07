@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   namespace :network do
+    resources :paths
+  end
+  namespace :network do
     resources :hosts
   end
   namespace :network do

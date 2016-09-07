@@ -1,0 +1,2 @@
+module Network::PathsHelper
+end

@@ -1,0 +1,1 @@
+json.array! @network_paths, partial: 'network_paths/network_path', as: :network_path

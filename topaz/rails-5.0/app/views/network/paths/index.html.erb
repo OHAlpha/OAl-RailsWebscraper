@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Network Paths</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @network_paths.each do |network_path| %>
+      <tr>
+        <td><%= network_path.name %></td>
+        <td><%= link_to 'Show', network_path %></td>
+        <td><%= link_to 'Edit', edit_network_path_path(network_path) %></td>
+        <td><%= link_to 'Destroy', network_path, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Network Path', new_network_path_path %>

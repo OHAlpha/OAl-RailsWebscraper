@@ -24,3 +24,5 @@ gitignore
 **/*~
 /spike/
 /model/
+
+process.sh

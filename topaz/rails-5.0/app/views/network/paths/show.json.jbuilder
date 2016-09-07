@@ -1,0 +1,1 @@
+json.partial! "network_paths/network_path", network_path: @network_path
