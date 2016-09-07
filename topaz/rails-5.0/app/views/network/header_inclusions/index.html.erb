@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Network Header Inclusions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Set</th>
+      <th>Header</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @network_header_inclusions.each do |network_header_inclusion| %>
+      <tr>
+        <td><%= network_header_inclusion.set_id %></td>
+        <td><%= network_header_inclusion.header_id %></td>
+        <td><%= link_to 'Show', network_header_inclusion %></td>
+        <td><%= link_to 'Edit', edit_network_header_inclusion_path(network_header_inclusion) %></td>
+        <td><%= link_to 'Destroy', network_header_inclusion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Network Header Inclusion', new_network_header_inclusion_path %>

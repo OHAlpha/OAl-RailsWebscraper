@@ -3,7 +3,7 @@ class CreateNetworkHeaderSets < ActiveRecord::Migration[5.0]
     create_table :network_header_sets do |t|
       t.text :headers_string
 
-      t.timestamps
+      #t.timestamps
     end
   end
 end

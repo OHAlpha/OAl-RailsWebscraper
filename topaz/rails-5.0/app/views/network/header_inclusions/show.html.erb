@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Set:</strong>
+  <%= @network_header_inclusion.set_id %>
+</p>
+
+<p>
+  <strong>Header:</strong>
+  <%= @network_header_inclusion.header_id %>
+</p>
+
+<%= link_to 'Edit', edit_network_header_inclusion_path(@network_header_inclusion) %> |
+<%= link_to 'Back', network_header_inclusions_path %>

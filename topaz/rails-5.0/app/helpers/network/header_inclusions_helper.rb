@@ -1,0 +1,2 @@
+module Network::HeaderInclusionsHelper
+end
