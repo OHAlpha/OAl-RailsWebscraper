@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  priority: 1
+  size: 1
+  downloaded: 1
+  status: MyString
+  message: MyString
+  long_message: MyText
+  access_id: 1
+
+two:
+  priority: 1
+  size: 1
+  downloaded: 1
+  status: MyString
+  message: MyString
+  long_message: MyText
+  access_id: 1

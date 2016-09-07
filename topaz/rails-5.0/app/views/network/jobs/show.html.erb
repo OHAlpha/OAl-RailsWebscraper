@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Priority:</strong>
+  <%= @network_job.priority %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @network_job.size %>
+</p>
+
+<p>
+  <strong>Downloaded:</strong>
+  <%= @network_job.downloaded %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @network_job.status %>
+</p>
+
+<p>
+  <strong>Message:</strong>
+  <%= @network_job.message %>
+</p>
+
+<p>
+  <strong>Long message:</strong>
+  <%= @network_job.long_message %>
+</p>
+
+<p>
+  <strong>Access:</strong>
+  <%= @network_job.access_id %>
+</p>
+
+<%= link_to 'Edit', edit_network_job_path(@network_job) %> |
+<%= link_to 'Back', network_jobs_path %>

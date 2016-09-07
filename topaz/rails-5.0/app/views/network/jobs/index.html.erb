@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Network Jobs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Priority</th>
+      <th>Size</th>
+      <th>Downloaded</th>
+      <th>Status</th>
+      <th>Message</th>
+      <th>Long message</th>
+      <th>Access</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @network_jobs.each do |network_job| %>
+      <tr>
+        <td><%= network_job.priority %></td>
+        <td><%= network_job.size %></td>
+        <td><%= network_job.downloaded %></td>
+        <td><%= network_job.status %></td>
+        <td><%= network_job.message %></td>
+        <td><%= network_job.long_message %></td>
+        <td><%= network_job.access_id %></td>
+        <td><%= link_to 'Show', network_job %></td>
+        <td><%= link_to 'Edit', edit_network_job_path(network_job) %></td>
+        <td><%= link_to 'Destroy', network_job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Network Job', new_network_job_path %>

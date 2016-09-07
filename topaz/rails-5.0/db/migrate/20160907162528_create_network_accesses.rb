@@ -15,6 +15,7 @@ class CreateNetworkAccesses < ActiveRecord::Migration[5.0]
       t.text :response_body
       t.datetime :created
       t.datetime :accessed
+      t.datetime :lock_version
       t.integer :avenue_id
       t.integer :request_headers_id
 

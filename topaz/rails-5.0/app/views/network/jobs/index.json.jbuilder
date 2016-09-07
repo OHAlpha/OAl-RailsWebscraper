@@ -1,0 +1,1 @@
+json.array! @network_jobs, partial: 'network_jobs/network_job', as: :network_job

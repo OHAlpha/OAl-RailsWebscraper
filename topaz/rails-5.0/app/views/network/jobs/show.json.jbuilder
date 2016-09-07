@@ -1,0 +1,1 @@
+json.partial! "network_jobs/network_job", network_job: @network_job
