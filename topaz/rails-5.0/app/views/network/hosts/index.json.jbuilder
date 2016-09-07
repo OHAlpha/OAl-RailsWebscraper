@@ -1,0 +1,1 @@
+json.array! @network_hosts, partial: 'network_hosts/network_host', as: :network_host

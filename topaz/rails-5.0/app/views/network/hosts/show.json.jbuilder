@@ -1,0 +1,1 @@
+json.partial! "network_hosts/network_host", network_host: @network_host
