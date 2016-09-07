@@ -5,6 +5,7 @@ class CreateNetworkChecksums < ActiveRecord::Migration[5.0]
       t.binary :bits
       t.string :hex
       t.integer :type_id
+      t.integer :access_id
 
       t.timestamps
     end
