@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Network Domains</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @network_domains.each do |network_domain| %>
+      <tr>
+        <td><%= network_domain.name %></td>
+        <td><%= link_to 'Show', network_domain %></td>
+        <td><%= link_to 'Edit', edit_network_domain_path(network_domain) %></td>
+        <td><%= link_to 'Destroy', network_domain, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Network Domain', new_network_domain_path %>

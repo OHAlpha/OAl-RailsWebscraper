@@ -1,0 +1,1 @@
+json.partial! "network_domains/network_domain", network_domain: @network_domain
