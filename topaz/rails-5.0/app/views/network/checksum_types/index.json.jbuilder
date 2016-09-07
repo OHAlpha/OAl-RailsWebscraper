@@ -1,0 +1,1 @@
+json.array! @network_checksum_types, partial: 'network_checksum_types/network_checksum_type', as: :network_checksum_type

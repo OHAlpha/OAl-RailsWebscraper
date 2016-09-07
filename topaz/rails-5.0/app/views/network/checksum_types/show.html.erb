@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @network_checksum_type.name %>
+</p>
+
+<p>
+  <strong>Bits:</strong>
+  <%= @network_checksum_type.bits %>
+</p>
+
+<%= link_to 'Edit', edit_network_checksum_type_path(@network_checksum_type) %> |
+<%= link_to 'Back', network_checksum_types_path %>

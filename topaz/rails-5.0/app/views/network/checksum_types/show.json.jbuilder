@@ -1,0 +1,1 @@
+json.partial! "network_checksum_types/network_checksum_type", network_checksum_type: @network_checksum_type

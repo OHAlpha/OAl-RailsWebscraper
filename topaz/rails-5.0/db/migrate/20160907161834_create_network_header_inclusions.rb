@@ -4,7 +4,7 @@ class CreateNetworkHeaderInclusions < ActiveRecord::Migration[5.0]
       t.integer :set_id
       t.integer :header_id
 
-      t.timestamps
+      #t.timestamps
     end
   end
 end
