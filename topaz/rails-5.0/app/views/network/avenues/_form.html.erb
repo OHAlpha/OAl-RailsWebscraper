@@ -1,0 +1,37 @@
+<%= form_for(network_avenue) do |f| %>
+  <% if network_avenue.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(network_avenue.errors.count, "error") %> prohibited this network_avenue from being saved:</h2>
+
+      <ul>
+      <% network_avenue.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :protocol %>
+    <%= f.text_field :protocol %>
+  </div>
+
+  <div class="field">
+    <%= f.label :query %>
+    <%= f.text_area :query %>
+  </div>
+
+  <div class="field">
+    <%= f.label :url %>
+    <%= f.text_field :url %>
+  </div>
+
+  <div class="field">
+    <%= f.label :file_id %>
+    <%= f.number_field :file_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

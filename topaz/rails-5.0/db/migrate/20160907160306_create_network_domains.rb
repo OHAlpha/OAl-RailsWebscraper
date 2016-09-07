@@ -3,7 +3,7 @@ class CreateNetworkDomains < ActiveRecord::Migration[5.0]
     create_table :network_domains do |t|
       t.string :name
 
-      t.timestamps
+      #t.timestamps
     end
   end
 end

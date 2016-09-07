@@ -1,0 +1,1 @@
+json.array! @network_avenues, partial: 'network_avenues/network_avenue', as: :network_avenue

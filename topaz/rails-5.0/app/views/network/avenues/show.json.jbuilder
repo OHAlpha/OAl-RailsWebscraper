@@ -1,0 +1,1 @@
+json.partial! "network_avenues/network_avenue", network_avenue: @network_avenue

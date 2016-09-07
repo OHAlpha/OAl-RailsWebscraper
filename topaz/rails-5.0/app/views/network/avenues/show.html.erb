@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Protocol:</strong>
+  <%= @network_avenue.protocol %>
+</p>
+
+<p>
+  <strong>Query:</strong>
+  <%= @network_avenue.query %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @network_avenue.url %>
+</p>
+
+<p>
+  <strong>File:</strong>
+  <%= @network_avenue.file_id %>
+</p>
+
+<%= link_to 'Edit', edit_network_avenue_path(@network_avenue) %> |
+<%= link_to 'Back', network_avenues_path %>

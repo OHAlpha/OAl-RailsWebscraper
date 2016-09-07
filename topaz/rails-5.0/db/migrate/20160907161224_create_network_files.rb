@@ -7,7 +7,7 @@ class CreateNetworkFiles < ActiveRecord::Migration[5.0]
       t.integer :host_id
       t.integer :path_id
 
-      t.timestamps
+      #t.timestamps
     end
   end
 end
