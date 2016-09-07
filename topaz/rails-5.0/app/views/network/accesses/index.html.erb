@@ -1,0 +1,57 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Network Accesses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Request method</th>
+      <th>Request auxillary headers</th>
+      <th>Request cookie</th>
+      <th>Request range</th>
+      <th>Request body</th>
+      <th>Request length</th>
+      <th>Request md5</th>
+      <th>Request type</th>
+      <th>Response code</th>
+      <th>Response headers</th>
+      <th>Response cookie</th>
+      <th>Response body</th>
+      <th>Created</th>
+      <th>Accessed</th>
+      <th>Avenue</th>
+      <th>Request headers</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @network_accesses.each do |network_access| %>
+      <tr>
+        <td><%= network_access.request_method %></td>
+        <td><%= network_access.request_auxillary_headers %></td>
+        <td><%= network_access.request_cookie %></td>
+        <td><%= network_access.request_range %></td>
+        <td><%= network_access.request_body %></td>
+        <td><%= network_access.request_length %></td>
+        <td><%= network_access.request_md5 %></td>
+        <td><%= network_access.request_type %></td>
+        <td><%= network_access.response_code %></td>
+        <td><%= network_access.response_headers %></td>
+        <td><%= network_access.response_cookie %></td>
+        <td><%= network_access.response_body %></td>
+        <td><%= network_access.created %></td>
+        <td><%= network_access.accessed %></td>
+        <td><%= network_access.avenue_id %></td>
+        <td><%= network_access.request_headers_id %></td>
+        <td><%= link_to 'Show', network_access %></td>
+        <td><%= link_to 'Edit', edit_network_access_path(network_access) %></td>
+        <td><%= link_to 'Destroy', network_access, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Network Access', new_network_access_path %>

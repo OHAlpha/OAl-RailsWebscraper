@@ -1,0 +1,1 @@
+json.partial! "network_accesses/network_access", network_access: @network_access

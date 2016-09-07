@@ -1,0 +1,97 @@
+<%= form_for(network_access) do |f| %>
+  <% if network_access.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(network_access.errors.count, "error") %> prohibited this network_access from being saved:</h2>
+
+      <ul>
+      <% network_access.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :request_method %>
+    <%= f.text_field :request_method %>
+  </div>
+
+  <div class="field">
+    <%= f.label :request_auxillary_headers %>
+    <%= f.text_area :request_auxillary_headers %>
+  </div>
+
+  <div class="field">
+    <%= f.label :request_cookie %>
+    <%= f.text_area :request_cookie %>
+  </div>
+
+  <div class="field">
+    <%= f.label :request_range %>
+    <%= f.text_area :request_range %>
+  </div>
+
+  <div class="field">
+    <%= f.label :request_body %>
+    <%= f.text_area :request_body %>
+  </div>
+
+  <div class="field">
+    <%= f.label :request_length %>
+    <%= f.number_field :request_length %>
+  </div>
+
+  <div class="field">
+    <%= f.label :request_md5 %>
+    <%= f.text_field :request_md5 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :request_type %>
+    <%= f.text_field :request_type %>
+  </div>
+
+  <div class="field">
+    <%= f.label :response_code %>
+    <%= f.number_field :response_code %>
+  </div>
+
+  <div class="field">
+    <%= f.label :response_headers %>
+    <%= f.text_area :response_headers %>
+  </div>
+
+  <div class="field">
+    <%= f.label :response_cookie %>
+    <%= f.text_area :response_cookie %>
+  </div>
+
+  <div class="field">
+    <%= f.label :response_body %>
+    <%= f.text_area :response_body %>
+  </div>
+
+  <div class="field">
+    <%= f.label :created %>
+    <%= f.datetime_select :created %>
+  </div>
+
+  <div class="field">
+    <%= f.label :accessed %>
+    <%= f.datetime_select :accessed %>
+  </div>
+
+  <div class="field">
+    <%= f.label :avenue_id %>
+    <%= f.number_field :avenue_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :request_headers_id %>
+    <%= f.number_field :request_headers_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,1 @@
+json.array! @network_accesses, partial: 'network_accesses/network_access', as: :network_access

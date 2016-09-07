@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  request_method: MyString
+  request_auxillary_headers: MyText
+  request_cookie: MyText
+  request_range: MyText
+  request_body: MyText
+  request_length: 1
+  request_md5: MyString
+  request_type: MyString
+  response_code: 1
+  response_headers: MyText
+  response_cookie: MyText
+  response_body: MyText
+  created: 2016-09-07 16:25:28
+  accessed: 2016-09-07 16:25:28
+  avenue_id: 1
+  request_headers_id: 1
+
+two:
+  request_method: MyString
+  request_auxillary_headers: MyText
+  request_cookie: MyText
+  request_range: MyText
+  request_body: MyText
+  request_length: 1
+  request_md5: MyString
+  request_type: MyString
+  response_code: 1
+  response_headers: MyText
+  response_cookie: MyText
+  response_body: MyText
+  created: 2016-09-07 16:25:28
+  accessed: 2016-09-07 16:25:28
+  avenue_id: 1
+  request_headers_id: 1

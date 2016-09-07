@@ -1,0 +1,84 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Request method:</strong>
+  <%= @network_access.request_method %>
+</p>
+
+<p>
+  <strong>Request auxillary headers:</strong>
+  <%= @network_access.request_auxillary_headers %>
+</p>
+
+<p>
+  <strong>Request cookie:</strong>
+  <%= @network_access.request_cookie %>
+</p>
+
+<p>
+  <strong>Request range:</strong>
+  <%= @network_access.request_range %>
+</p>
+
+<p>
+  <strong>Request body:</strong>
+  <%= @network_access.request_body %>
+</p>
+
+<p>
+  <strong>Request length:</strong>
+  <%= @network_access.request_length %>
+</p>
+
+<p>
+  <strong>Request md5:</strong>
+  <%= @network_access.request_md5 %>
+</p>
+
+<p>
+  <strong>Request type:</strong>
+  <%= @network_access.request_type %>
+</p>
+
+<p>
+  <strong>Response code:</strong>
+  <%= @network_access.response_code %>
+</p>
+
+<p>
+  <strong>Response headers:</strong>
+  <%= @network_access.response_headers %>
+</p>
+
+<p>
+  <strong>Response cookie:</strong>
+  <%= @network_access.response_cookie %>
+</p>
+
+<p>
+  <strong>Response body:</strong>
+  <%= @network_access.response_body %>
+</p>
+
+<p>
+  <strong>Created:</strong>
+  <%= @network_access.created %>
+</p>
+
+<p>
+  <strong>Accessed:</strong>
+  <%= @network_access.accessed %>
+</p>
+
+<p>
+  <strong>Avenue:</strong>
+  <%= @network_access.avenue_id %>
+</p>
+
+<p>
+  <strong>Request headers:</strong>
+  <%= @network_access.request_headers_id %>
+</p>
+
+<%= link_to 'Edit', edit_network_access_path(@network_access) %> |
+<%= link_to 'Back', network_accesses_path %>

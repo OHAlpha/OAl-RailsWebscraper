@@ -1,0 +1,2 @@
+json.extract! network_access, :id, :request_method, :request_auxillary_headers, :request_cookie, :request_range, :request_body, :request_length, :request_md5, :request_type, :response_code, :response_headers, :response_cookie, :response_body, :created, :accessed, :avenue_id, :request_headers_id, :created_at, :updated_at
+json.url network_access_url(network_access, format: :json)
