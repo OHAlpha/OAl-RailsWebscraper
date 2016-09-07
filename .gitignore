@@ -1,2 +1,5 @@
 gitignore
+**/*~
+/spike/
+/model/
 /spike/
