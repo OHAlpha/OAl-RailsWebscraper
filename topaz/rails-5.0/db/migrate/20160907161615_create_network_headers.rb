@@ -4,7 +4,7 @@ class CreateNetworkHeaders < ActiveRecord::Migration[5.0]
       t.string :header_name
       t.text :header_value
 
-      t.timestamps
+      #t.timestamps
     end
   end
 end

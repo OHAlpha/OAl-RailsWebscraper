@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   namespace :network do
+    resources :header_sets
+  end
+  namespace :network do
     resources :headers
   end
   namespace :network do
