@@ -1,0 +1,1 @@
+json.partial! "network_files/network_file", network_file: @network_file

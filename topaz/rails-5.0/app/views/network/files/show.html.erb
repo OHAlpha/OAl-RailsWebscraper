@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Full path:</strong>
+  <%= @network_file.full_path %>
+</p>
+
+<p>
+  <strong>Port:</strong>
+  <%= @network_file.port %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @network_file.url %>
+</p>
+
+<p>
+  <strong>Host:</strong>
+  <%= @network_file.host_id %>
+</p>
+
+<p>
+  <strong>Path:</strong>
+  <%= @network_file.path_id %>
+</p>
+
+<%= link_to 'Edit', edit_network_file_path(@network_file) %> |
+<%= link_to 'Back', network_files_path %>

@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Network Files</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Full path</th>
+      <th>Port</th>
+      <th>Url</th>
+      <th>Host</th>
+      <th>Path</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @network_files.each do |network_file| %>
+      <tr>
+        <td><%= network_file.full_path %></td>
+        <td><%= network_file.port %></td>
+        <td><%= network_file.url %></td>
+        <td><%= network_file.host_id %></td>
+        <td><%= network_file.path_id %></td>
+        <td><%= link_to 'Show', network_file %></td>
+        <td><%= link_to 'Edit', edit_network_file_path(network_file) %></td>
+        <td><%= link_to 'Destroy', network_file, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Network File', new_network_file_path %>

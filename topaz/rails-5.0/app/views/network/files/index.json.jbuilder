@@ -1,0 +1,1 @@
+json.array! @network_files, partial: 'network_files/network_file', as: :network_file
