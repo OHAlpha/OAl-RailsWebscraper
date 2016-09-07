@@ -1,0 +1,1 @@
+json.array! @network_headers, partial: 'network_headers/network_header', as: :network_header

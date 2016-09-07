@@ -1,0 +1,1 @@
+json.partial! "network_headers/network_header", network_header: @network_header

@@ -6,7 +6,7 @@ class CreateNetworkAvenues < ActiveRecord::Migration[5.0]
       t.string :url
       t.integer :file_id
 
-      t.timestamps
+      #t.timestamps
     end
   end
 end

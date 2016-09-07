@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Header name:</strong>
+  <%= @network_header.header_name %>
+</p>
+
+<p>
+  <strong>Header value:</strong>
+  <%= @network_header.header_value %>
+</p>
+
+<%= link_to 'Edit', edit_network_header_path(@network_header) %> |
+<%= link_to 'Back', network_headers_path %>

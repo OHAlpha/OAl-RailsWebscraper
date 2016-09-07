@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Network Headers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Header name</th>
+      <th>Header value</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @network_headers.each do |network_header| %>
+      <tr>
+        <td><%= network_header.header_name %></td>
+        <td><%= network_header.header_value %></td>
+        <td><%= link_to 'Show', network_header %></td>
+        <td><%= link_to 'Edit', edit_network_header_path(network_header) %></td>
+        <td><%= link_to 'Destroy', network_header, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Network Header', new_network_header_path %>
