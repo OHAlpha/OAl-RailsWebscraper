@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Network Checksums</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th>Bits</th>
+      <th>Hex</th>
+      <th>Type</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @network_checksums.each do |network_checksum| %>
+      <tr>
+        <td><%= network_checksum.value %></td>
+        <td><%= network_checksum.bits %></td>
+        <td><%= network_checksum.hex %></td>
+        <td><%= network_checksum.type_id %></td>
+        <td><%= link_to 'Show', network_checksum %></td>
+        <td><%= link_to 'Edit', edit_network_checksum_path(network_checksum) %></td>
+        <td><%= link_to 'Destroy', network_checksum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Network Checksum', new_network_checksum_path %>

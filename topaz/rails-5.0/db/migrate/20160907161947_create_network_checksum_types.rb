@@ -4,7 +4,7 @@ class CreateNetworkChecksumTypes < ActiveRecord::Migration[5.0]
       t.string :name
       t.integer :bits
 
-      t.timestamps
+      #t.timestamps
     end
   end
 end

@@ -1,0 +1,1 @@
+json.array! @network_checksums, partial: 'network_checksums/network_checksum', as: :network_checksum

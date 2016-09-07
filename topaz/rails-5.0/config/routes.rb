@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   namespace :network do
+    resources :checksums
+  end
+  namespace :network do
     resources :checksum_types
   end
   namespace :network do

@@ -1,0 +1,1 @@
+json.partial! "network_checksums/network_checksum", network_checksum: @network_checksum
