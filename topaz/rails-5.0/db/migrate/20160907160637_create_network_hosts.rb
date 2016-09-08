@@ -6,5 +6,7 @@ class CreateNetworkHosts < ActiveRecord::Migration[5.0]
 
       #t.timestamps
     end
+    add_index :network_hosts, :host_name, unique: true
+    add_index :network_hosts, :domain_id, unique: true
   end
 end
