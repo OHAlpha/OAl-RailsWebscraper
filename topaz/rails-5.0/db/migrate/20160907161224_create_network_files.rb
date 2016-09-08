@@ -1,11 +1,11 @@
 class CreateNetworkFiles < ActiveRecord::Migration[5.0]
   def change
     create_table :network_files do |t|
-      t.string :full_path
-      t.integer :port
-      t.string :url
-      t.integer :host_id
-      t.integer :path_id
+      t.string :full_path, null: false
+      t.integer :port, null: false, default: 80
+      t.string :url, null: false
+      t.integer :host_id, null: false
+      t.integer :path_id, null: false
 
       #t.timestamps
     end

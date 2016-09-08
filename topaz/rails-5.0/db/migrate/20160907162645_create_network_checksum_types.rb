@@ -6,5 +6,6 @@ class CreateNetworkChecksumTypes < ActiveRecord::Migration[5.0]
 
       #t.timestamps
     end
+    add_index :network_checksum_types, :name, unique: true
   end
 end

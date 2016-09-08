@@ -24,6 +24,9 @@ class Network::File < ApplicationRecord
     validates :full_path, presence: true
     validate :path_name
     
+    validates :url, presence: true
+    validate :url_string
+    
     # returns :host's host name
     def host_name
     end
@@ -68,6 +71,9 @@ class Network::File < ApplicationRecord
         
         # checks if :path's full name matches :full_path
         def path_name
+        end
+        
+        def url_string
         end
         
 end

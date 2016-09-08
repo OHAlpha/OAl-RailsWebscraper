@@ -11,5 +11,6 @@ class CreateNetworkJobs < ActiveRecord::Migration[5.0]
 
       t.timestamps
     end
+    add_index :network_jobs, :access_id
   end
 end
