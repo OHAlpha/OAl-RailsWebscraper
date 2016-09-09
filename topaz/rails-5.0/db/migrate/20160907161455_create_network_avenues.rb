@@ -2,7 +2,7 @@ class CreateNetworkAvenues < ActiveRecord::Migration[5.0]
   def change
     create_table :network_avenues do |t|
       t.string :protocol, null: false, default: 'http'
-      t.text :query
+      t.text :query, null: false, default: []
       t.string :url, null: false
       t.integer :file_id, null: false
 

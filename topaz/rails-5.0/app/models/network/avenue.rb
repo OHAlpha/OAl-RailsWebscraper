@@ -1,5 +1,7 @@
 class Network::Avenue < ApplicationRecord
     
+    serialize :query, Array
+    
     belongs_to :file, class_name: 'Network::File', inverse_of: :avenues
     
     has_many :accesses, class_name: 'Network::Access', inverse_of: :avenue, foreign_key: 'avenue_id'
@@ -7,7 +9,11 @@ class Network::Avenue < ApplicationRecord
     before_validation :verify_file
     before_validation :verify_url
     
+    after_validation :canonicalize
+    
     validates :protocol, presence: true
+    
+    validates :query, presence: true
     
     validates :file, presence: true
     
@@ -53,6 +59,9 @@ class Network::Avenue < ApplicationRecord
                 end
                 self.url = "#{protocol}://#{file.url}#{q}"
             end
+        end
+        
+        def canonicalize
         end
         
         def url_string

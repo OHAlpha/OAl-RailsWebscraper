@@ -1,5 +1,7 @@
 class Network::Access < ApplicationRecord
     
+    attr_accessor :priority
+    
     serialize :request_auxillary_headers, Hash
     serialize :response_headers, Hash
     
@@ -10,6 +12,32 @@ class Network::Access < ApplicationRecord
     has_many :sums, class_name: 'Network::Checksum', inverse_of: :access, foreign_key: 'access_id'
     
     has_many :jobs, class_name: 'Network::Job', inverse_of: :access, foreign_key: 'access_id'
+    has_many :finished_jobs, class_name: 'Network::Job', foreign_key: 'access_id', -> { where status: Network::Job.completed_status }
+    has_many :pending_jobs, class_name: 'Network::Job', foreign_key: 'access_id', -> { where.not status: Network::Job.completed_status }
+  
+    before_validation do |access|
+        if access.created.nil?
+            access.created = Time.now
+        end
+    end
+    
+    after_create do |access|
+        if access.priority.nil?
+            access.jobs.create! priority: access.priority
+        else
+            access.jobs.create! priority: Network::Job.default_priority
+        end
+    end
+    
+    validates :request_method, presence: true
+    
+    validates :request_auxillary_headers, presence: true
+    
+    validates :created, presence: true
+    
+    validates :avenue, presence: true
+    
+    validates :request_headers, presence: true
     
     # returns :avenue's host name
     def host_name

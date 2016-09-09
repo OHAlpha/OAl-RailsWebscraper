@@ -12,6 +12,8 @@ class Network::Host < ApplicationRecord
     before_validation :verify_domain
     before_validation :verify_host_name
     
+    after_validation :canonicalize
+    
     # validates :domain for presence
     validates :domain, presence: true
     
@@ -27,6 +29,9 @@ class Network::Host < ApplicationRecord
         
         # constructs :host_name from :domain if :host_name is not specified
         def verify_host_name
+        end
+        
+        def canonicalize
         end
         
         # checks if :domain's full name matches :host_name

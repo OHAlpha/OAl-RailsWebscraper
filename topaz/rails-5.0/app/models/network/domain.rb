@@ -12,6 +12,8 @@ class Network::Domain < ApplicationRecord
     # checks if :name is a compound name
     before_validation :cascade_names
     
+    after_validation :canonicalize
+    
     # causes parent to validate after destruction
     after_destroy :validate_parent
     
@@ -31,6 +33,9 @@ class Network::Domain < ApplicationRecord
         # :name is compund if it contains any periods.
         # :name is to be split by any periods present
         def cascade_names
+        end
+        
+        def canonicalize
         end
         
         # calls check_for_children on parent after destruction

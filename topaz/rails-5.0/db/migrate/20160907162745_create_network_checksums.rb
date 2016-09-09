@@ -3,9 +3,9 @@ class CreateNetworkChecksums < ActiveRecord::Migration[5.0]
     create_table :network_checksums do |t|
       t.integer :value
       t.binary :bits
-      t.string :hex
-      t.integer :type_id
-      t.integer :access_id
+      t.string :hex, null: false
+      t.integer :type_id, null: false
+      t.integer :access_id, null: false
 
       t.timestamps
     end

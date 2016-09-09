@@ -4,6 +4,10 @@ class Network::HeaderInclusion < ApplicationRecord
     
     belongs_to :header, class_name: 'Network::Header', inverse_of: :inclusions
     
+    validates :set, presence: true
+    
+    validates :header, presence: true
+    
     validate :single_header
     
     private

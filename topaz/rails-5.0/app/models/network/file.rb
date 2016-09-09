@@ -17,6 +17,8 @@ class Network::File < ApplicationRecord
     before_validation :verify_parents
     before_validation :verify_url
     
+    after_validation :canonicalize
+    
     # validates :path for presence
     validates :path, presence: true
     
@@ -67,6 +69,9 @@ class Network::File < ApplicationRecord
                 end
                 self.url = "#{host.host_name}#{p}#{path.full_name}"
             end
+        end
+        
+        def canonicalize
         end
         
         # checks if :path's full name matches :full_path
