@@ -1,7 +1,29 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
+null:
+  full_name: '/'
 
-two:
-  name: MyString
+wiki:
+  name: wiki
+  parent: null
+  full_name: '/wiki'
+
+wiki_Adjacency_matrix:
+  name: Adjacency_matrix
+  parent: wiki
+  full_name: '/wiki/Adjacency_matrix'
+
+wiki_Adjacency_matrix:
+  name: Alcubierre_drive
+  parent: wiki
+  full_name: '/wiki/Alcubierre_drive'
+  
+wiki_Ampere:
+  name: Ampere
+  parent: wiki
+  full_name: '/wiki/Ampere'
+  
+wiki_Arc_diagram:
+  name: Arc_diagram
+  parent: wiki
+  full_name: '/wiki/Arc_diagram'

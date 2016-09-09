@@ -18,7 +18,7 @@ class Network::Path < ApplicationRecord
     after_destroy :validate_parent
     
     # validates name for presence and validity
-    validates :name, presence: true
+    validates :name, presence: true, format: { with: /\s*\S+\s*/, message: '' }
     validate :ascii_name
     validate :special_character_placement
     

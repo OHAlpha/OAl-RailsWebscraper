@@ -1,15 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  full_path: MyString
-  port: 1
-  url: MyString
-  host_id: 1
-  path_id: 1
+Adjacency_matrix:
+  path: wiki_Adjacency_matrix
+  host: en_wikipedia
+  url: en.wikipedia.org/wiki/Adjacency_matrix
 
-two:
-  full_path: MyString
-  port: 1
-  url: MyString
-  host_id: 1
-  path_id: 1
+Alcubierre_drive:
+  path: wiki_Alcubierre_drive
+  host: en_wikipedia
+  url: en.wikipedia.org/wiki/Alcubierre_drive
+
+Arc_diagram:
+  path: wiki_Arc_diagram
+  host: en_wikipedia
+  url: en.wikipedia.org/wiki/Arc_diagram

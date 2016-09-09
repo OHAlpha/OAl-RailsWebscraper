@@ -18,7 +18,7 @@ class Network::Domain < ApplicationRecord
     after_destroy :validate_parent
     
     # validates name for presence and validity
-    validates :name, presence: true
+    validates :name, presence: true, format: { with: /\s*\S+\s*/, message: '' }
     validate :ascii_name
     validate :no_spaces
     
@@ -60,7 +60,7 @@ class Network::Domain < ApplicationRecord
             end
         end
         
-        # checks that :name contains no spaces
+        # checks that :name contains no spaces except on the ends
         def no_spaces
             # TODO: code from previous project -- needs verification and/or revision
             if not name.nil? and not name.index(' ').nil?
