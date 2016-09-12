@@ -1,0 +1,3 @@
+Ophiuchus Archivist Rails Webscraper Topaz 0.0 - Feature 001
+
+This feature branch is to fully prototype the network controllers. The default scaffold-generated controllers exist but must be moved/copied to different modules and methods may need to be added/removed.
