@@ -59,4 +59,15 @@ class Network::Access < ApplicationRecord
     def query
     end
     
+    def self.canonicalize_request_method
+    end
+    
+    def self.canonicalize_auxillary_headers
+    end
+    
+    private
+        
+        def canonicalize
+        end
+        
 end

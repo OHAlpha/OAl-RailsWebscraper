@@ -10,7 +10,12 @@ class Network::HeaderSet < ApplicationRecord
     before_validation :verify_inclusions
     before_validation :verify_headers
     
+    validates :headers_string, presence: true
+    validate :valid_headers
     validate :match_headers
+    
+    def self.canonicalize_headers_string
+    end
     
     private
         
@@ -18,6 +23,9 @@ class Network::HeaderSet < ApplicationRecord
         end
         
         def verify_headers
+        end
+        
+        def valid_headers
         end
         
         def match_headers

@@ -2,19 +2,15 @@
 
 org_domain:
   name: org
-  full_name: org
 
 wikipedia_domain:
   name: wikipedia
   parent: org_domain
-  full_name: wikipedia.org
 
 en_wikipedia_domain:
   name: en
   parent: wikipedia_domain
-  full_name: en.wikipedia.org
 
 de_wikipedia_domain:
   name: de
   parent: wikipedia_domain
-  full_name: de.wikipedia.org

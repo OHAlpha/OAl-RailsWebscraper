@@ -27,6 +27,12 @@ class Network::Path < ApplicationRecord
     def full_name
     end
     
+    def self.canonicalize_file_name
+    end
+    
+    def self.canonicalize_path_name
+    end
+    
     private
         
         # checks if :name is a compound name and if so, creates parents for each additional name

@@ -5,9 +5,15 @@ class Network::Header < ApplicationRecord
     
     after_validation :canonicalize
     
-    validates :header_name, presence: true, format: { with: /\w+(-\w+)?/, message: '' }
+    validates :header_name, presence: true, format: { with: /\s*[a-zA-Z]+(\s*[-_]\s*[a-zA-Z]+)?\s*/, message: '' }
     
     validates :header_value, presence: true
+    
+    def self.canonicalize_header_name
+    end
+    
+    def self.canonicalize_header_value
+    end
     
     private
         

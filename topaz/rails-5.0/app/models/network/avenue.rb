@@ -32,6 +32,15 @@ class Network::Avenue < ApplicationRecord
     def port
     end
     
+    def self.canonicalize_protocol
+    end
+    
+    def self.canonicalize_query
+    end
+    
+    def self.canonicalize_avenue_url
+    end
+    
     private
         
         def verify_file

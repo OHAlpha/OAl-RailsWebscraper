@@ -3,14 +3,17 @@
 Adjacency_matrix:
   path: wiki_Adjacency_matrix
   host: en_wikipedia
+  full_path: /wiki/Adjacency_matrix
   url: en.wikipedia.org/wiki/Adjacency_matrix
 
 Alcubierre_drive:
   path: wiki_Alcubierre_drive
   host: en_wikipedia
+  full_path: /wiki/Alcubierre_drive
   url: en.wikipedia.org/wiki/Alcubierre_drive
 
 Arc_diagram:
   path: wiki_Arc_diagram
   host: en_wikipedia
+  full_path: /wiki/Arc_diagram
   url: en.wikipedia.org/wiki/Arc_diagram

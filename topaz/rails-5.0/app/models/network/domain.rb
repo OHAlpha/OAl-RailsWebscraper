@@ -27,6 +27,12 @@ class Network::Domain < ApplicationRecord
     def full_name
     end
     
+    def self.canonicalize_domain_name
+    end
+    
+    def self.canonicalize_host_name
+    end
+    
     private
         
         # checks if :name is a compound name and if so, creates parents for each additional name

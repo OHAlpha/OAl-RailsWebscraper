@@ -33,6 +33,9 @@ class Network::File < ApplicationRecord
     def host_name
     end
     
+    def self.canonicalize_file_url
+    end
+    
     private
         
         # creates a path corresponding to :full_path if one is not specified

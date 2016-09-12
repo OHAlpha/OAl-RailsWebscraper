@@ -1,13 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  protocol: MyString
-  query: MyText
-  url: MyString
-  file_id: 1
+ssl_Adjacency_matrix:
+  file: Adjacency_matrix
+  protocol: https
+  url: https://en.wikipedia.org/wiki/Adjacency_matrix
 
-two:
-  protocol: MyString
-  query: MyText
-  url: MyString
-  file_id: 1
+ssl_Alcubierre_drive:
+  file: Alcubierre_drive
+  protocol: https
+  url: https://en.wikipedia.org/wiki/Alcubierre_drive

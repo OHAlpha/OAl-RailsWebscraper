@@ -6,9 +6,8 @@ class Network::HostTest < ActiveSupport::TestCase
     # end
     
     test "create with inconsistent domain and host_name" do
-        host = Network::Host.create! domain: network_domains(:de_wikipedia_domain), host_name: 'en.wikipedia.org'
-        assert_equal network_domains(:de_wikipedia_domain).id, host.domain.id
-        assert_equal network_domains(:de_wikipedia_domain).full_name, host.host_name
+        host = Network::Host.new domain: network_domains(:de_wikipedia_domain), host_name: 'en.wikipedia.org'
+        assert_not host.save
     end
     
     test "create from domain" do
