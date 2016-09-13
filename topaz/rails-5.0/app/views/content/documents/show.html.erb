@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Avenue:</strong>
+  <%= @content_document.avenue_id %>
+</p>
+
+<p>
+  <strong>Source:</strong>
+  <%= @content_document.source_id %>
+</p>
+
+<p>
+  <strong>Contents count:</strong>
+  <%= @content_document.contents_count %>
+</p>
+
+<%= link_to 'Edit', edit_content_document_path(@content_document) %> |
+<%= link_to 'Back', content_documents_path %>

@@ -1,0 +1,1 @@
+json.partial! "content_documents/content_document", content_document: @content_document
