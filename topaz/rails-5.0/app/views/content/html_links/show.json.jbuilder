@@ -1,0 +1,1 @@
+json.partial! "content_html_links/content_html_link", content_html_link: @content_html_link

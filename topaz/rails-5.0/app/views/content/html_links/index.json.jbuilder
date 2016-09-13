@@ -1,0 +1,1 @@
+json.array! @content_html_links, partial: 'content_html_links/content_html_link', as: :content_html_link

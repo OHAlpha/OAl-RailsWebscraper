@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Source:</strong>
+  <%= @content_html_link.source_id %>
+</p>
+
+<p>
+  <strong>Target:</strong>
+  <%= @content_html_link.target_id %>
+</p>
+
+<%= link_to 'Edit', edit_content_html_link_path(@content_html_link) %> |
+<%= link_to 'Back', content_html_links_path %>

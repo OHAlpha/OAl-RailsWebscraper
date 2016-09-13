@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Content Html Links</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Source</th>
+      <th>Target</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @content_html_links.each do |content_html_link| %>
+      <tr>
+        <td><%= content_html_link.source_id %></td>
+        <td><%= content_html_link.target_id %></td>
+        <td><%= link_to 'Show', content_html_link %></td>
+        <td><%= link_to 'Edit', edit_content_html_link_path(content_html_link) %></td>
+        <td><%= link_to 'Destroy', content_html_link, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Content Html Link', new_content_html_link_path %>
