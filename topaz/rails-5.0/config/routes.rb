@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
   namespace :content do
+    resources :content_uses
+  end
+  namespace :content do
     resources :content_documents
   end
   namespace :content do

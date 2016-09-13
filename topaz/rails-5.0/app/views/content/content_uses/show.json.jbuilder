@@ -1,0 +1,1 @@
+json.partial! "content_content_uses/content_content_use", content_content_use: @content_content_use

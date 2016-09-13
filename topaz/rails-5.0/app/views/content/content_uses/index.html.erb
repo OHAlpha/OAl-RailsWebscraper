@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Content Content Uses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Document</th>
+      <th>Content</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @content_content_uses.each do |content_content_use| %>
+      <tr>
+        <td><%= content_content_use.document_id %></td>
+        <td><%= content_content_use.content_id %></td>
+        <td><%= link_to 'Show', content_content_use %></td>
+        <td><%= link_to 'Edit', edit_content_content_use_path(content_content_use) %></td>
+        <td><%= link_to 'Destroy', content_content_use, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Content Content Use', new_content_content_use_path %>

@@ -1,3 +1,20 @@
 Ophiuchus Archivist Rails Webscraper Topaz 0.0 - Feature 002
 
 This feature branch is to create the content models.
+
+Content is organized into Documents and Contents. Documents are top-level
+entities able to exist independently. Contents are auxillary entities used by
+Documents. Contents can themselves be Documents and those documents may or may
+not be able to stand alone. True, independent Documents are distinguished by the
+is_standalone field in the database. A value corresponding to true will indicate
+that a Document is independent. Both Documents and Contents contain very little
+information about the entity they represent but instead store associations to
+more specialized models. The only type of Document currently is the
+HtmlDocument. There are many known Content types but only two contain auxillary
+information. The two specialized Content models are Image and InnerDocument.
+InnerDocument contains a link to a Document instance and represents a Document
+that is used as Content. Examples of such a situation include html snippets
+fetched dynamically by a HtmlDocument. The snippet is treated as a Document
+in order to allow it to have the Document's functionality to reference other
+Content such as stylesheets, scripts and Images, even though the snippet may not
+be able to be served as an independent Document.

@@ -1,0 +1,27 @@
+<%= form_for(content_content_use) do |f| %>
+  <% if content_content_use.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(content_content_use.errors.count, "error") %> prohibited this content_content_use from being saved:</h2>
+
+      <ul>
+      <% content_content_use.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :document_id %>
+    <%= f.number_field :document_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :content_id %>
+    <%= f.text_field :content_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
