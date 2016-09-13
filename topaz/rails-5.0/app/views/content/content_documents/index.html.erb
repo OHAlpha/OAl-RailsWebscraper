@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Content Content Documents</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Document</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @content_content_documents.each do |content_content_document| %>
+      <tr>
+        <td><%= content_content_document.document_id %></td>
+        <td><%= link_to 'Show', content_content_document %></td>
+        <td><%= link_to 'Edit', edit_content_content_document_path(content_content_document) %></td>
+        <td><%= link_to 'Destroy', content_content_document, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Content Content Document', new_content_content_document_path %>

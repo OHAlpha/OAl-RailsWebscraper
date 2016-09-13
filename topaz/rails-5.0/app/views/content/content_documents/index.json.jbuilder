@@ -1,0 +1,1 @@
+json.array! @content_content_documents, partial: 'content_content_documents/content_content_document', as: :content_content_document
