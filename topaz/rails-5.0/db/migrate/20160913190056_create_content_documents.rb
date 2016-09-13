@@ -3,8 +3,8 @@ class CreateContentDocuments < ActiveRecord::Migration[5.0]
     create_table :content_documents do |t|
       t.integer :is_standalone
       t.integer :avenue_id
-      t.integer :source_id
-      t.string :source_type
+      t.integer :document_id
+      t.string :document_type
       t.integer :contents_count
 
       t.timestamps

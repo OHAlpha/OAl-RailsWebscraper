@@ -3,8 +3,8 @@ class CreateContentContents < ActiveRecord::Migration[5.0]
     create_table :content_contents do |t|
       t.integer :usage_type
       t.integer :avenue_id
-      t.integer :source_id
-      t.string :source_type
+      t.integer :content_id
+      t.string :content_type
       t.integer :references_count
 
       t.timestamps
