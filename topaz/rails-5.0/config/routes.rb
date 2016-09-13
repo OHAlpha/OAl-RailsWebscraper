@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
   namespace :content do
+    resources :contents
+  end
+  namespace :content do
     resources :documents
   end
   get 'debug/home'
