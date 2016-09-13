@@ -1,0 +1,27 @@
+<%= form_for(content_html_document) do |f| %>
+  <% if content_html_document.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(content_html_document.errors.count, "error") %> prohibited this content_html_document from being saved:</h2>
+
+      <ul>
+      <% content_html_document.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :links_count %>
+    <%= f.number_field :links_count %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
