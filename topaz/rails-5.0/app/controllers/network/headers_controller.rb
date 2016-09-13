@@ -1,4 +1,4 @@
-class Network::HeadersController < ApplicationController
+class Network::HeadersController < Network::NetworkController
   before_action :set_network_header, only: [:show, :edit, :update, :destroy]
 
   # GET /network/headers

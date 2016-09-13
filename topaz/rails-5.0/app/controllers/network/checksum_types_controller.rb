@@ -1,4 +1,4 @@
-class Network::ChecksumTypesController < ApplicationController
+class Network::ChecksumTypesController < Network::NetworkController
   before_action :set_network_checksum_type, only: [:show, :edit, :update, :destroy]
 
   # GET /network/checksum_types

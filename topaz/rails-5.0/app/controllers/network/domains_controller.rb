@@ -1,10 +1,22 @@
-class Network::DomainsController < ApplicationController
+class Network::DomainsController < Network::NetworkController
   before_action :set_network_domain, only: [:show, :edit, :update, :destroy]
 
   # GET /network/domains
   # GET /network/domains.json
   def index
     @network_domains = Network::Domain.all
+  end
+
+  # GET /network/domains/top
+  # GET /network/domains/top.json
+  def top
+    @network_domains = Network::Domain.where parent: nil
+  end
+
+  # GET /network/domains/hosted
+  # GET /network/domains/hosted.json
+  def hosted
+    @network_domains = Network::Domain.joins :host
   end
 
   # GET /network/domains/1

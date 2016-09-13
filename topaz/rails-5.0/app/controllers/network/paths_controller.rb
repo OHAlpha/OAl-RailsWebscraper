@@ -1,4 +1,4 @@
-class Network::PathsController < ApplicationController
+class Network::PathsController < Network::NetworkController
   before_action :set_network_path, only: [:show, :edit, :update, :destroy]
 
   # GET /network/paths

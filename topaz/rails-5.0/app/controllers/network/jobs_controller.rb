@@ -1,4 +1,4 @@
-class Network::JobsController < ApplicationController
+class Network::JobsController < Network::NetworkController
   before_action :set_network_job, only: [:show, :edit, :update, :destroy]
 
   # GET /network/jobs

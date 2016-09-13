@@ -1,4 +1,4 @@
-class Network::AvenuesController < ApplicationController
+class Network::AvenuesController < Network::NetworkController
   before_action :set_network_avenue, only: [:show, :edit, :update, :destroy]
 
   # GET /network/avenues

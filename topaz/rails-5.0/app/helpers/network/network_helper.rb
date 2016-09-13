@@ -1,0 +1,2 @@
+module Network::NetworkHelper
+end

@@ -1,4 +1,4 @@
-class Network::ChecksumsController < ApplicationController
+class Network::ChecksumsController < Network::NetworkController
   before_action :set_network_checksum, only: [:show, :edit, :update, :destroy]
 
   # GET /network/checksums

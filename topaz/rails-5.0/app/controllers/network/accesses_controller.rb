@@ -1,4 +1,4 @@
-class Network::AccessesController < ApplicationController
+class Network::AccessesController < Network::NetworkController
   before_action :set_network_access, only: [:show, :edit, :update, :destroy]
 
   # GET /network/accesses

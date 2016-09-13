@@ -1,4 +1,4 @@
-class Network::HeaderInclusionsController < ApplicationController
+class Network::HeaderInclusionsController < Network::NetworkController
   before_action :set_network_header_inclusion, only: [:show, :edit, :update, :destroy]
 
   # GET /network/header_inclusions

@@ -1,4 +1,4 @@
-class Network::HostsController < ApplicationController
+class Network::HostsController < Network::NetworkController
   before_action :set_network_host, only: [:show, :edit, :update, :destroy]
 
   # GET /network/hosts

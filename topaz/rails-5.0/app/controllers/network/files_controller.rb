@@ -1,4 +1,4 @@
-class Network::FilesController < ApplicationController
+class Network::FilesController < Network::NetworkController
   before_action :set_network_file, only: [:show, :edit, :update, :destroy]
 
   # GET /network/files
