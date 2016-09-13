@@ -2,6 +2,7 @@ Ophiuchus Archivist Rails Webscraper Topaz 0.0 - Feature 002
 
 This feature branch is to create the content models.
 
+13/09/2016: 00
 Content is organized into Documents and Contents. Documents are top-level
 entities able to exist independently. Contents are auxillary entities used by
 Documents. Contents can themselves be Documents and those documents may or may
@@ -18,3 +19,9 @@ fetched dynamically by a HtmlDocument. The snippet is treated as a Document
 in order to allow it to have the Document's functionality to reference other
 Content such as stylesheets, scripts and Images, even though the snippet may not
 be able to be served as an independent Document.
+
+13/09/2016: 01
+HtmlDocuments can have links to other documents. For simplicity, links will not
+be allowed to Contents. For this reason, stylesheets, scripts, Images and other
+Content may be treated as Documents when referenced as the target of an
+HtmlDocument link.
