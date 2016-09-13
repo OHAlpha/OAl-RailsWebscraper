@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Width:</strong>
+  <%= @content_image.width %>
+</p>
+
+<p>
+  <strong>Height:</strong>
+  <%= @content_image.height %>
+</p>
+
+<%= link_to 'Edit', edit_content_image_path(@content_image) %> |
+<%= link_to 'Back', content_images_path %>
