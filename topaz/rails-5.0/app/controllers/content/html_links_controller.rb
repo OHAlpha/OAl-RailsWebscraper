@@ -1,4 +1,4 @@
-class Content::HtmlLinksController < ApplicationController
+class Content::HtmlLinksController < Content::ContentController
   before_action :set_content_html_link, only: [:show, :edit, :update, :destroy]
 
   # GET /content/html_links

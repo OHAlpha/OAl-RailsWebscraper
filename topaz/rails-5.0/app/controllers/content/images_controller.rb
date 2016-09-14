@@ -1,4 +1,4 @@
-class Content::ImagesController < ApplicationController
+class Content::ImagesController < Content::ContentController
   before_action :set_content_image, only: [:show, :edit, :update, :destroy]
 
   # GET /content/images

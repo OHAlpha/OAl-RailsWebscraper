@@ -1,4 +1,4 @@
-class Content::DocumentsController < ApplicationController
+class Content::DocumentsController < Content::ContentController
   before_action :set_content_document, only: [:show, :edit, :update, :destroy]
 
   # GET /content/documents

@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
 
   namespace :content do
+    get 'content/home'
+  end
+
+  namespace :content do
+    get 'content/index'
+  end
+
+  namespace :content do
     resources :html_links
   end
   namespace :content do
