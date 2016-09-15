@@ -1,5 +1,7 @@
 class Network::Avenue < ApplicationRecord
     
+    attr_accessor :priority
+    
     serialize :query, Array
     
     belongs_to :file, class_name: 'Network::File', inverse_of: :avenues
@@ -10,6 +12,20 @@ class Network::Avenue < ApplicationRecord
     before_validation :verify_url
     
     after_validation :canonicalize
+    
+    after_create do |avenue|
+        if avenue.priority.nil?
+            priority = Network::Job.default_priority
+        else
+            priority = avenue.priority
+        end
+        avenue.accesses.create! do |access|
+            access.priority = priority
+            access.request_method = 'GET'
+            access.auxillary_request_headers = {}
+            access.request_headers = Network::HeaderSet.first
+        end
+    end
     
     validates :protocol, presence: true
     
