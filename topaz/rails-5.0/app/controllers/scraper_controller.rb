@@ -18,7 +18,16 @@ class ScraperController < ApplicationController
   end
 
   def visit_url
-    avenue = Network::Avenue.find_or_create_by url: params[:url]
+    Network::Avenue..transaction do
+      avenue = Network::Avenue.find_or_create_by url: params[:url] do |a|
+        if params[:priority].nil?
+          a.priority = Network::Job.highest_priority
+        else
+          a.priority = params[:priority]
+        end
+      end
+    end
+    
   end
 
   def avenue
