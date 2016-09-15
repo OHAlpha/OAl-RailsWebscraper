@@ -36,8 +36,6 @@ Rails.application.routes.draw do
 
   get 'scraper/images'
 
-  get 'scraper/image_map'
-
   get 'scraper/image'
 
   get 'scraper/image_data'
