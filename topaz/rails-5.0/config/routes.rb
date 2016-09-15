@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  
+  get 'debug/home'
+  get 'debug/index'
 
   get 'scraper/home'
 
@@ -31,37 +34,17 @@ Rails.application.routes.draw do
   get 'scraper/image_data'
 
   namespace :content do
-    get 'home'
-  end
-
-  namespace :content do
-    get 'content/index'
-  end
-
-  namespace :content do
+    root 'content#home'
+    get 'home' => 'content#home'
+    get 'index' => 'content#index'
     resources :html_links
-  end
-  namespace :content do
     resources :content_uses
-  end
-  namespace :content do
     resources :content_documents
-  end
-  namespace :content do
     resources :images
-  end
-  namespace :content do
     resources :html_documents
-  end
-  namespace :content do
     resources :contents
-  end
-  namespace :content do
     resources :documents
   end
-  get 'debug/home'
-
-  get 'debug/index'
 
   namespace :network do
     root 'network#home'
