@@ -41,6 +41,12 @@ class ScraperControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should get visit_url" do
+    get scraper_visit_url_url + '?url=proto%3A%2F%2Fdomain.top%2Fpath%2Fto%2Ffile.ext%3Fvar%3Dval'
+    assert_response :success
+    assert_not_nil Network.where(url: 'proto://domain.top/path/to/file.ext?var=val').first
+  end
+
   test "should get access" do
     get scraper_access_url
     assert_response :success
