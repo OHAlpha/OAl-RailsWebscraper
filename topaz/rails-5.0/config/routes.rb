@@ -5,43 +5,33 @@ Rails.application.routes.draw do
   get 'scraper/statistics'
 
   get 'scraper/scrape'
-
   get 'scraper/scrape_results'
 
+  get 'scraper/visit_url'
+
   get 'scraper/avenue'
-
   get 'scraper/access'
-
   get 'scraper/access_response'
 
   get 'scraper/documents'
-
   get 'scraper/document'
-
   get 'scraper/document_data'
 
   get 'scraper/contents'
-
   get 'scraper/content'
-
   get 'scraper/content_data'
 
   get 'scraper/pages'
-
   get 'scraper/page_map'
-
   get 'scraper/page'
-
   get 'scraper/page_data'
 
   get 'scraper/images'
-
   get 'scraper/image'
-
   get 'scraper/image_data'
 
   namespace :content do
-    get 'content/home'
+    get 'home'
   end
 
   namespace :content do

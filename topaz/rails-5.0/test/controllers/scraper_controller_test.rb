@@ -26,6 +26,11 @@ class ScraperControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should get visit_url" do
+    get scraper_visit_url_url
+    assert_response :success
+  end
+
   test "should get access" do
     get scraper_access_url
     assert_response :success
