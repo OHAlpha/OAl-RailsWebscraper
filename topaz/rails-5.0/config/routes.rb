@@ -1,18 +1,12 @@
 Rails.application.routes.draw do
   
   get 'debug/home'
-
   get 'debug/index'
 
   namespace :content do
-    get 'content/home'
-  end
-
-  namespace :content do
-    get 'content/index'
-  end
-
-  namespace :content do
+    root 'content#home'
+    get 'home' => 'content#home'
+    get 'index' => 'content#index'
     resources :html_links
     resources :content_uses
     resources :content_documents
