@@ -12,6 +12,7 @@ class ScraperController < ApplicationController
   end
 
   def visit_url
+    avenue = Network::Avenue.find_or_create_by url: params[:url]
   end
 
   def avenue
