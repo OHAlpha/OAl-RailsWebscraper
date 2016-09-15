@@ -11,6 +11,9 @@ class ScraperController < ApplicationController
   def scrape_results
   end
 
+  def visit_url
+  end
+
   def avenue
   end
 
