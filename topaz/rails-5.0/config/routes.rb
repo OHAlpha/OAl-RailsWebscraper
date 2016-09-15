@@ -1,20 +1,22 @@
 Rails.application.routes.draw do
-  
-  get 'debug/home'
-  get 'debug/index'
 
   get 'scraper/home'
 
   get 'scraper/statistics'
 
   get 'scraper/scrape'
-  get 'scraper/scrape_results'
-
-  get 'scraper/visit_url'
+  post 'scraper/scrape_results'
+  
+  get 'scraper/make_request'
+  get 'scraper/request_results'
+  get 'scraper/visit_url/:url' => 'scraper#visit_url'
 
   get 'scraper/avenue'
   get 'scraper/access'
   get 'scraper/access_response'
+
+  get 'scraper/header_sets'
+  get 'scraper/header_set'
 
   get 'scraper/documents'
   get 'scraper/document'
@@ -32,6 +34,9 @@ Rails.application.routes.draw do
   get 'scraper/images'
   get 'scraper/image'
   get 'scraper/image_data'
+
+  get 'debug/home'
+  get 'debug/index'
 
   namespace :content do
     root 'content#home'

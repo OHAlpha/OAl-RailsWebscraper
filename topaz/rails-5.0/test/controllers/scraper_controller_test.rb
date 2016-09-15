@@ -26,6 +26,16 @@ class ScraperControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should get make_request" do
+    get scraper_make_request_url
+    assert_response :success
+  end
+
+  test "should get request_results" do
+    get scraper_request_results_url
+    assert_response :success
+  end
+
   test "should get visit_url" do
     get scraper_visit_url_url
     assert_response :success
@@ -38,6 +48,16 @@ class ScraperControllerTest < ActionDispatch::IntegrationTest
 
   test "should get access_response" do
     get scraper_access_response_url
+    assert_response :success
+  end
+
+  test "should get helper_sets" do
+    get scraper_helper_sets_url
+    assert_response :success
+  end
+
+  test "should get helper_set" do
+    get scraper_helper_set_url
     assert_response :success
   end
 
