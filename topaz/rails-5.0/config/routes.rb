@@ -1,29 +1,18 @@
 Rails.application.routes.draw do
-
-  namespace :content do
-    resources :html_links
-  end
-  namespace :content do
-    resources :content_uses
-  end
-  namespace :content do
-    resources :content_documents
-  end
-  namespace :content do
-    resources :images
-  end
-  namespace :content do
-    resources :html_documents
-  end
-  namespace :content do
-    resources :contents
-  end
-  namespace :content do
-    resources :documents
-  end
+  
   get 'debug/home'
 
   get 'debug/index'
+
+  namespace :content do
+    resources :html_links
+    resources :content_uses
+    resources :content_documents
+    resources :images
+    resources :html_documents
+    resources :contents
+    resources :documents
+  end
 
   namespace :network do
     root 'network#home'
