@@ -10,7 +10,61 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160907163118) do
+ActiveRecord::Schema.define(version: 20160913195533) do
+
+  create_table "content_content_documents", force: :cascade do |t|
+    t.integer  "document_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "content_content_uses", force: :cascade do |t|
+    t.integer  "document_id"
+    t.integer  "content_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "content_contents", force: :cascade do |t|
+    t.integer  "usage_type"
+    t.integer  "avenue_id"
+    t.integer  "content_id"
+    t.string   "content_type"
+    t.integer  "references_count"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  create_table "content_documents", force: :cascade do |t|
+    t.integer  "is_standalone"
+    t.integer  "avenue_id"
+    t.integer  "document_id"
+    t.string   "document_type"
+    t.integer  "contents_count"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "content_html_documents", force: :cascade do |t|
+    t.string   "title"
+    t.integer  "links_count"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "content_html_links", force: :cascade do |t|
+    t.integer  "source_id"
+    t.integer  "target_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "content_images", force: :cascade do |t|
+    t.integer  "width"
+    t.integer  "height"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "network_accesses", force: :cascade do |t|
     t.string   "request_method",            default: "GET", null: false
