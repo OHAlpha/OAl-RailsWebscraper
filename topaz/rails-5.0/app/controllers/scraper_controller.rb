@@ -10,6 +10,12 @@ class ScraperController < ApplicationController
 
   def scrape_results
   end
+  
+  def make_request
+  end
+  
+  def request_results
+  end
 
   def visit_url
     avenue = Network::Avenue.find_or_create_by url: params[:url]
@@ -22,6 +28,12 @@ class ScraperController < ApplicationController
   end
 
   def access_response
+  end
+
+  def helper_sets
+  end
+
+  def helper_set
   end
 
   def documents
