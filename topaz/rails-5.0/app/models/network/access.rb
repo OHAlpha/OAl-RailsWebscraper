@@ -23,9 +23,9 @@ class Network::Access < ApplicationRecord
     
     after_create do |access|
         if access.priority.nil?
-            access.jobs.create! priority: access.priority
-        else
             access.jobs.create! priority: Network::Job.default_priority
+        else
+            access.jobs.create! priority: access.priority
         end
     end
     
