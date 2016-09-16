@@ -21,6 +21,9 @@ class Network::Host < ApplicationRecord
     validates :host_name, presence: true
     validate :domain_name
     
+    def colored_url
+    end
+    
     private
         
         # creates a domain corresponding to :host_name if one is not specified
