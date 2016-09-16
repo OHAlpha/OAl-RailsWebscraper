@@ -33,6 +33,9 @@ class Network::File < ApplicationRecord
     def host_name
     end
     
+    def colored_url
+    end
+    
     def self.canonicalize_file_url
     end
     

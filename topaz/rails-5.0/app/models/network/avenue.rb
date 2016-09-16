@@ -48,6 +48,12 @@ class Network::Avenue < ApplicationRecord
     def port
     end
     
+    def query_string
+    end
+    
+    def colored_url
+    end
+    
     def self.canonicalize_protocol
     end
     
