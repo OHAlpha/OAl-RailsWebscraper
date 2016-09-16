@@ -2,7 +2,7 @@ class Network::Path < ApplicationRecord
     
     # sets the parent-child relationship
     # => specifies that when a domain is destroyed, all of its descendants are also destroyed
-    belongs_to :parent, class_name: 'Network::Path', inverse_of: :children, autosave: true
+    belongs_to :parent, optional: true, class_name: 'Network::Path', inverse_of: :children, autosave: true
     has_many :children, class_name: 'Network::Path', inverse_of: :parent, foreign_key: 'parent_id', dependent: :destroy
     
     # sets the path-file relationship
@@ -39,6 +39,17 @@ class Network::Path < ApplicationRecord
         # :name is compund if it contains any periods.
         # :name is to be split by any periods present
         def cascade_names
+            if name[0] == '/'
+                self.name = name[1..-1]
+            end
+            names = name.split '/'
+            if names.size > 1
+                if not parent.nil?
+                    throw
+                end
+                self.name = names[-1]
+                self.parent = Network::Path.find_or_create_by name: names[0..-2].join('/')
+            end
         end
         
         def canonicalize

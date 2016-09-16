@@ -75,10 +75,13 @@ ActiveRecord::Schema.define(version: 20160913195533) do
     t.integer  "request_length"
     t.string   "request_md5"
     t.string   "request_type"
+    t.string   "request_subtype"
     t.integer  "response_code"
     t.text     "response_headers"
     t.text     "response_cookie"
     t.text     "response_body"
+    t.string   "response_type"
+    t.string   "response_subtype"
     t.datetime "created",                                   null: false
     t.datetime "accessed"
     t.datetime "lock_version"

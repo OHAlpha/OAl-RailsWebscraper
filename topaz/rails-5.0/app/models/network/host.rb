@@ -22,16 +22,23 @@ class Network::Host < ApplicationRecord
     validate :domain_name
     
     def colored_url
+        "<span style=\"color: #88f\">#{full_path}</span>"
     end
     
     private
         
         # creates a domain corresponding to :host_name if one is not specified
         def verify_domain
+            if domain.nil? and not host_name.nil?
+                self.domain = Network::Domain.find_or_create_by name: host_name
+            end
         end
         
         # constructs :host_name from :domain if :host_name is not specified
         def verify_host_name
+            if host_name.nil? and not domain.nil?
+                self.url = domain.full_name
+            end
         end
         
         def canonicalize

@@ -14,3 +14,28 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(setup);
+
+function setup() {
+    var delegates = $('article.delegate');
+    delegates.each(delegate);
+}
+
+function delegate() {
+    var jel = $(this);
+    var url = jel.attr('data-delegate-url');
+    var query = jel.attr('data-delegate-params');
+    if (typeof query == typeof undefined || query == false) {
+        query = '';
+    }
+    else {
+        query = '?' + query;
+    }
+    var req = new XMLHttpRequest();
+    req.addEventListener("load", function() {
+        jel.html(this.responseText);
+    });
+    req.open("GET",url+query);
+    req.send();
+}

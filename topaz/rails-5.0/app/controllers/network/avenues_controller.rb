@@ -10,7 +10,7 @@ class Network::AvenuesController < Network::NetworkController
   # GET /network/avenues/1
   # GET /network/avenues/1.json
   def show
-    @network_avenue = Network::Avenue.includes(access: :jobs).find params[:id]
+    @network_avenue = Network::Avenue.includes(accesses: :jobs).find params[:id]
   end
 
   # GET /network/avenues/new

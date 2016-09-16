@@ -2,7 +2,7 @@ class Network::Domain < ApplicationRecord
     
     # sets the parent-child relationship
     # => specifies that when a domain is destroyed, all of its descendants are also destroyed
-    belongs_to :parent, class_name: 'Network::Domain', inverse_of: :children, autosave: true
+    belongs_to :parent, optional: true, class_name: 'Network::Domain', inverse_of: :children, autosave: true
     has_many :children, class_name: 'Network::Domain', inverse_of: :parent, foreign_key: 'parent_id', dependent: :destroy
     
     # sets the domain-host relationship
@@ -39,6 +39,14 @@ class Network::Domain < ApplicationRecord
         # :name is compund if it contains any periods.
         # :name is to be split by any periods present
         def cascade_names
+            names = name.split '.'
+            if names.size > 1
+                if not parent.nil?
+                    throw
+                end
+                self.name = names[0]
+                self.parent = Network::Domain.find_or_create_by name: names[1..-1].join('.')
+            end
         end
         
         def canonicalize

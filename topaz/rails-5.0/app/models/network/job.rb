@@ -23,6 +23,9 @@ class Network::Job < ApplicationRecord
     def self.lowest_priority
     end
     
+    def self.skip_priority
+    end
+    
     def self.initial_status
     end
     

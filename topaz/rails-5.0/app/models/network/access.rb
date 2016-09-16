@@ -12,8 +12,8 @@ class Network::Access < ApplicationRecord
     has_many :sums, class_name: 'Network::Checksum', inverse_of: :access, foreign_key: 'access_id'
     
     has_many :jobs, class_name: 'Network::Job', inverse_of: :access, foreign_key: 'access_id'
-    has_many :finished_jobs, class_name: 'Network::Job', foreign_key: 'access_id', -> { where status: Network::Job.completed_status }
-    has_many :pending_jobs, class_name: 'Network::Job', foreign_key: 'access_id', -> { where.not status: Network::Job.completed_status }
+    has_many :finished_jobs, -> { where status: Network::Job.completed_status }, class_name: 'Network::Job', foreign_key: 'access_id'
+    has_many :pending_jobs, -> { where.not status: Network::Job.completed_status }, class_name: 'Network::Job', foreign_key: 'access_id'
   
     before_validation do |access|
         if access.created.nil?

@@ -19,11 +19,13 @@ class Network::Avenue < ApplicationRecord
         else
             priority = avenue.priority
         end
-        avenue.accesses.create! do |access|
-            access.priority = priority
-            access.request_method = 'GET'
-            access.auxillary_request_headers = {}
-            access.request_headers = Network::HeaderSet.first
+        if priority != Network::Job.skip_priority
+            avenue.accesses.create! do |access|
+                access.priority = priority
+                access.request_method = 'GET'
+                access.request_auxillary_headers = {}
+                access.request_headers = Network::HeaderSet.first
+            end
         end
     end
     
@@ -49,9 +51,17 @@ class Network::Avenue < ApplicationRecord
     end
     
     def query_string
+        if query.nil?
+            ''
+        else
+            pairs = query.collect { |key_val| key_val.join '=' }
+            "?#{pairs.join '&'}"
+        end
     end
     
     def colored_url
+        #"<span style=\"color: red\">#{protocol}</span>://<a href=\"#{network_file_url file}\"></a><span style=\"color: green\">#{query}</span>"
+        "<span style=\"color: red\">#{protocol}</span>://#{file.colored_url}<span style=\"color: green\">#{query_string}</span>"
     end
     
     def self.canonicalize_protocol
@@ -66,29 +76,26 @@ class Network::Avenue < ApplicationRecord
     private
         
         def verify_file
-            # TODO: code from previous project -- needs verification and/or revision
             if ( file.nil? or protocol.nil? ) and not url.nil?
                 us = URI.split url
                 self.protocol = us[0]
                 host = us[2]
                 port = us[3]
                 path = us[5]
-                self.query = us[7]
+                query = us[7]
                 
-                self.file = Network::File.find_or_create_by path: Network::Path.find_or_create_by(full_name: path), port: port, host: Network::Host.find_or_create_by(domain: Network::Domain.find_or_create_by(full_name: host))
+                if not query.nil?
+                    self.query = query.split('&').collect { |pair| pair.split '=' }
+                end
+                
+                self.file = Network::File.find_or_create_by url: "#{host}#{Network::File.port_string port}#{path}"
             end
         end
         
         # constructs :url from :host and :path if :url is not specified
         def verify_url
-            # TODO: code from previous project -- needs verification and/or revision
             if url.nil?
-                if query.nil?
-                    q = ''
-                else
-                    q = query
-                end
-                self.url = "#{protocol}://#{file.url}#{q}"
+                self.url = "#{protocol}://#{file.url}#{query_string}"
             end
         end
         

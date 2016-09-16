@@ -28,7 +28,7 @@
 <% elsif @type == 'snippet' %>
 
 <p><emphasis>
-  <span style="color: red"><%= @network_avenue.protocol %></span>://<span style="color: green"><%= @network_avenue.query %></span>
+  <%= @network_avenue.colored_url.html_safe %>
 </emphasis></p>
 
 <% end %>

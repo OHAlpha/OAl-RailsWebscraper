@@ -34,9 +34,18 @@ class Network::File < ApplicationRecord
     end
     
     def colored_url
+        "#{host.colored_url}<span style=\"color: yellow\">#{port_string port}</span><span style=\"color: gray\">#{full_path}</span>"
     end
     
     def self.canonicalize_file_url
+    end
+        
+    def self.port_string(port)
+        if port.nil?
+            ''
+        else
+            ":#{port.to_s}"
+        end
     end
     
     private
@@ -51,29 +60,24 @@ class Network::File < ApplicationRecord
         
         # creates a host and path corresponding to :url if either is not specified
         def verify_parents
-            # TODO: code from previous project -- needs verification and/or revision
             if ( path.nil? or host.nil? ) and not url.nil?
                 as = url.split '/'
                 os = as[0].split ':'
                 host = os[0]
-                self.port = os[1]
-                path = '/' + as[1..-1].join('/')
+                if os.size == 2
+                    self.port = os[1]
+                end
+                self.full_path = '/' + as[1..-1].join('/')
                 
-                self.host = Network::Host.find_or_create_by domain: Network::Domain.find_or_create_by(full_name: host)
-                self.path = Network::Path.find_or_create_by full_name: path
+                self.host = Network::Host.find_or_create_by host_name: host
+                self.path = Network::Path.find_or_create_by name: self.full_path
             end
         end
         
         # constructs :url from :host and :path if :url is not specified
         def verify_url
-            # TODO: code from previous project -- needs verification and/or revision
             if url.nil? and not path.nil? and not host.nil?
-                if port.nil?
-                    p = ''
-                else
-                    p = ':' + port.to_s
-                end
-                self.url = "#{host.host_name}#{p}#{path.full_name}"
+                self.url = "#{host.host_name}#{port_string port}#{path.full_name}"
             end
         end
         
