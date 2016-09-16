@@ -1,5 +1,5 @@
 class Network::AvenuesController < Network::NetworkController
-  before_action :set_network_avenue, only: [:show, :edit, :update, :destroy]
+  before_action :set_network_avenue, only: [:edit, :update, :destroy]
 
   # GET /network/avenues
   # GET /network/avenues.json
@@ -10,6 +10,7 @@ class Network::AvenuesController < Network::NetworkController
   # GET /network/avenues/1
   # GET /network/avenues/1.json
   def show
+    @network_avenue = Network::Avenue.includes(access: :jobs).find params[:id]
   end
 
   # GET /network/avenues/new

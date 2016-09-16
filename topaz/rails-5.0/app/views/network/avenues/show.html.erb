@@ -1,3 +1,5 @@
+<% if @type == 'full' %>
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -22,3 +24,11 @@
 
 <%= link_to 'Edit', edit_network_avenue_path(@network_avenue) %> |
 <%= link_to 'Back', network_avenues_path %>
+
+<% elsif @type == 'snippet' %>
+
+<p><emphasis>
+  <span style="color: red"><%= @network_avenue.protocol %></span>://<span style="color: green"><%= @network_avenue.query %></span>
+</emphasis></p>
+
+<% end %>
