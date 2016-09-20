@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(version: 20160913195533) do
 
   create_table "network_accesses", force: :cascade do |t|
     t.string   "request_method",            default: "GET", null: false
-    t.text     "request_auxillary_headers",                 null: false
+    t.text     "request_auxillary_headers", default: "{}",  null: false
     t.text     "request_cookie"
     t.text     "request_range"
     t.text     "request_body"
@@ -178,15 +178,15 @@ ActiveRecord::Schema.define(version: 20160913195533) do
   end
 
   create_table "network_jobs", force: :cascade do |t|
-    t.integer  "priority",                 null: false
+    t.integer  "priority",     default: 5,                     null: false
     t.integer  "size"
-    t.integer  "downloaded",   default: 0, null: false
-    t.string   "status",                   null: false
-    t.string   "message",                  null: false
-    t.text     "long_message",             null: false
-    t.integer  "access_id",                null: false
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.integer  "downloaded",   default: 0,                     null: false
+    t.integer  "status",       default: 1,                     null: false
+    t.string   "message",      default: "job has not started", null: false
+    t.text     "long_message", default: "job has not started", null: false
+    t.integer  "access_id",                                    null: false
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
     t.index ["access_id"], name: "index_network_jobs_on_access_id"
   end
 

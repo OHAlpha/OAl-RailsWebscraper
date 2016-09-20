@@ -3,23 +3,48 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Url:</strong>
+  <%= @network_avenue.url %>
+</p>
+
+<p>
   <strong>Protocol:</strong>
   <%= @network_avenue.protocol %>
 </p>
 
 <p>
   <strong>Query:</strong>
-  <%= @network_avenue.query %>
-</p>
-
-<p>
-  <strong>Url:</strong>
-  <%= @network_avenue.url %>
+  <%= @network_avenue.query_string %>
+  <ul>
+    <% @network_avenue.query.each do |key,val| %>
+    <li><strong><%= key %>:</strong> <%= val %></li>
+    <% end %>
+  </ul>
 </p>
 
 <p>
   <strong>File:</strong>
-  <%= @network_avenue.file_id %>
+  <a href="<%= network_file_path @network_avenue.file %>"><%= @network_avenue.file.colored_url.html_safe %></a>
+</p>
+
+<p>
+  <strong>Accesses:</strong>
+  <% if @network_avenue.accesses.count == 0 %>
+  No access yet.
+  <% else %>
+  <ul>
+    <%  @network_avenue.accesses.each do |access| %>
+    <li><strong><code><%= access.id %></code></strong></li>
+    <% if access.jobs.count > 0 %>
+    <ul>
+      <% access.jobs.each do |job| %>
+      <li><%= job.id %>: <%= job.status %>-'<%= job.state %>' <%= job.progress_string %></li>
+      <% end %>
+    </ul>
+    <% end %>
+    <% end %>
+  </ul>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_network_avenue_path(@network_avenue) %> |
@@ -27,8 +52,8 @@
 
 <% elsif @type == 'snippet' %>
 
-<p><emphasis>
+<p><strong>
   <%= @network_avenue.colored_url.html_safe %>
-</emphasis></p>
+</strong></p>
 
 <% end %>

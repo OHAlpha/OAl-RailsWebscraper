@@ -25,6 +25,27 @@ class Network::Job < ApplicationRecord
         save
     end
     
+    def state
+        self.class.status_message status
+    end
+    
+    def progress
+        if size.nil? or size <= 0
+            -1
+        else
+            1.0 * downloaded / size
+        end
+    end
+    
+    def progress_string
+        p = progress
+        if p == -1
+            "N/A"
+        else
+            (p*100).to_s + '%'
+        end
+    end
+    
     def self.default_priority
         5
     end
@@ -86,8 +107,10 @@ class Network::Job < ApplicationRecord
     end
     
     def self.status_message(code)
-        states = {initial_status: "not started", completed_status: "completed"}
-        states[code]
+        states = {}
+        states[initial_status.to_s] = "not started"
+        states[completed_status.to_s] = "completed"
+        states[code.to_s]
     end
     
 end

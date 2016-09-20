@@ -1,3 +1,3 @@
 if Network::HeaderSet.count == 0
-    Network::HeaderSet.create headers_string: {}
+    Network::HeaderSet.create! headers_string: {}
 end
