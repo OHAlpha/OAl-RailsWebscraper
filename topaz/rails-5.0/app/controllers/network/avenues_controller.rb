@@ -11,6 +11,14 @@ class Network::AvenuesController < Network::NetworkController
   # GET /network/avenues/1.json
   def show
     @network_avenue = Network::Avenue.includes(accesses: :jobs).find params[:id]
+    if params[:type].nil?
+      @type = 'full'
+    else
+      @type = params[:type]
+    end
+    if @type == 'snippet'
+      render layout: false
+    end
   end
 
   # GET /network/avenues/new

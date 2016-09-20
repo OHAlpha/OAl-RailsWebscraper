@@ -33,9 +33,11 @@ function delegate() {
         query = '?' + query;
     }
     var req = new XMLHttpRequest();
-    req.addEventListener("load", function() {
+    req.onload = function() {
+        //jel.html(this.responseXML);
         jel.html(this.responseText);
-    });
+    };
     req.open("GET",url+query);
+    //req.responseType = "document";
     req.send();
 }

@@ -22,7 +22,7 @@ class Network::Host < ApplicationRecord
     validate :domain_name
     
     def colored_url
-        "<span style=\"color: #88f\">#{full_path}</span>"
+        "<span style=\"color: #88f\">#{host_name}</span>"
     end
     
     private

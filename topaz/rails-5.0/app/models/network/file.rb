@@ -34,7 +34,7 @@ class Network::File < ApplicationRecord
     end
     
     def colored_url
-        "#{host.colored_url}<span style=\"color: yellow\">#{port_string port}</span><span style=\"color: gray\">#{full_path}</span>"
+        "#{host.colored_url}<span style=\"color: orange\">#{self.class.port_string port}</span><span style=\"color: gray\">#{full_path}</span>"
     end
     
     def self.canonicalize_file_url
