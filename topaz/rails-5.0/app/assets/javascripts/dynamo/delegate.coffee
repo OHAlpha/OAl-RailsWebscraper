@@ -12,5 +12,4 @@ fetch_delegate = ->
     req = new XMLHttpRequest();
     req.onload = -> jel.html(@.responseText)
     req.open("GET",url+query);
-    //req.responseType = "document";
     req.send();
