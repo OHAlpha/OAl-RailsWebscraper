@@ -16,7 +16,7 @@
   <strong>Query:</strong>
   <%= @network_avenue.query_string %>
   <ul>
-    <% @network_avenue.query.each do |key,val| %>
+    <% @network_avenue.query_array.each do |key,val| %>
     <li><strong><%= key %>:</strong> <%= val %></li>
     <% end %>
   </ul>

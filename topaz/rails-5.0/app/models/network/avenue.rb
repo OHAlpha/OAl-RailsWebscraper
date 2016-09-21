@@ -67,7 +67,7 @@ class Network::Avenue < ApplicationRecord
         if query.nil?
             ''
         else
-            pairs = query.collect { |key_val| key_val.join '=' }
+            pairs = query_array.collect { |key_val| key_val.join '=' }
             "?#{pairs.join '&'}"
         end
     end
