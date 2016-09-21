@@ -19,6 +19,10 @@ class Network::HeaderSet < ApplicationRecord
     validates :headers_string, presence: true
     validate :valid_headers
     validate :match_headers
+    
+    def headers_string_hash
+        @headers_string_hash
+    end
       
     def headers_string_hash=(hash)
         @headers_string_hash = hash

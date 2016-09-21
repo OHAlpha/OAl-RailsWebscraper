@@ -42,6 +42,10 @@ class Network::Avenue < ApplicationRecord
     validates :url, presence: true
     validate :url_string
     
+    def query_array
+        @query_array
+    end
+    
     def query_array=(arr)
         @query_array = arr
         if arr.nil?
