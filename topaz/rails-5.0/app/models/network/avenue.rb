@@ -2,8 +2,6 @@ class Network::Avenue < ApplicationRecord
     
     attr_accessor :priority
     
-    serialize :query, Array
-    
     belongs_to :file, class_name: 'Network::File', inverse_of: :avenues
     
     has_many :accesses, class_name: 'Network::Access', inverse_of: :avenue, foreign_key: 'avenue_id'
