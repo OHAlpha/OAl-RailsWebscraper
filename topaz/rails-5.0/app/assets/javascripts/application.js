@@ -13,31 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
-
-$(document).ready(setup);
-
-function setup() {
-    var delegates = $('article.delegate');
-    delegates.each(delegate);
-}
-
-function delegate() {
-    var jel = $(this);
-    var url = jel.attr('data-delegate-url');
-    var query = jel.attr('data-delegate-params');
-    if (typeof query == typeof undefined || query == false) {
-        query = '';
-    }
-    else {
-        query = '?' + query;
-    }
-    var req = new XMLHttpRequest();
-    req.onload = function() {
-        //jel.html(this.responseXML);
-        jel.html(this.responseText);
-    };
-    req.open("GET",url+query);
-    //req.responseType = "document";
-    req.send();
-}
+// require_tree .
+//= require dynamo

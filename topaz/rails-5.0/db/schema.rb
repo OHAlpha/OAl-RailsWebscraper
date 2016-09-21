@@ -93,7 +93,7 @@ ActiveRecord::Schema.define(version: 20160913195533) do
 
   create_table "network_avenues", force: :cascade do |t|
     t.string  "protocol", default: "http", null: false
-    t.text    "query",                     null: false
+    t.text    "query",    default: "[]",   null: false
     t.string  "url",                       null: false
     t.integer "file_id",                   null: false
     t.index ["file_id", "protocol", "query"], name: "index_network_avenues_on_file_id_and_protocol_and_query", unique: true

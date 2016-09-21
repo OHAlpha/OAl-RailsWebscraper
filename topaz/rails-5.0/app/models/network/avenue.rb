@@ -21,7 +21,7 @@ class Network::Avenue < ApplicationRecord
             avenue.accesses.create! do |access|
                 access.priority = priority
                 access.request_method = 'GET'
-                access.auxillary_request_headers = {}
+                access.request_auxillary_headers = {}
                 access.request_headers = Network::HeaderSet.first
             end
         end
