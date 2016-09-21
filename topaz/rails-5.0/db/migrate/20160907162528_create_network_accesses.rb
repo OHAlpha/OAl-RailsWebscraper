@@ -2,7 +2,7 @@ class CreateNetworkAccesses < ActiveRecord::Migration[5.0]
   def change
     create_table :network_accesses do |t|
       t.string :request_method, null: false, default: 'GET'
-      t.text :request_auxillary_headers, null: false, default: {}
+      t.text :request_auxillary_headers, null: false, default: '{}'
       t.text :request_cookie
       t.text :request_range
       t.text :request_body

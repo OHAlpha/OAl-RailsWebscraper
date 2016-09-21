@@ -14,6 +14,26 @@ class Network::Job < ApplicationRecord
     
     validates :access, presence: true
     
+    def meta(s,sm,lm=nil)
+        self.status = s
+        self.message = sm
+        self.long_message = if lm.nil? then sm else lm end
+    end
+  
+    def meta_and_save(s,sm,lm=nil)
+        meta(s,sm,lm)
+        save
+    end
+    
+    def state
+    end
+    
+    def progress
+    end
+    
+    def progress_string
+    end
+    
     def self.default_priority
     end
     
@@ -21,6 +41,15 @@ class Network::Job < ApplicationRecord
     end
     
     def self.lowest_priority
+    end
+    
+    def self.skip_priority
+    end
+    
+    def self.increment_priority(priority)
+    end
+    
+    def self.decrement_priority(priority)
     end
     
     def self.initial_status
@@ -41,15 +70,7 @@ class Network::Job < ApplicationRecord
     def self.default_completed_long_message
     end
     
-    def meta(s,sm,lm=nil)
-        self.status = s
-        self.message = sm
-        self.long_message = if lm.nil? then sm else lm end
-    end
-  
-    def meta_and_save(s,sm,lm=nil)
-        meta(s,sm,lm)
-        save
+    def self.status_message(code)
     end
     
 end

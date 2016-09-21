@@ -19,11 +19,19 @@ class Network::Avenue < ApplicationRecord
         else
             priority = avenue.priority
         end
-        avenue.accesses.create! do |access|
-            access.priority = priority
-            access.request_method = 'GET'
-            access.auxillary_request_headers = {}
-            access.request_headers = Network::HeaderSet.first
+        if priority != Network::Job.skip_priority
+            avenue.accesses.create! do |access|
+                access.priority = priority
+                access.request_method = 'GET'
+                access.auxillary_request_headers = {}
+                access.request_headers = Network::HeaderSet.first
+            end
+        end
+    end
+    
+    after_initialize do
+        if not query.nil?
+            @query_array = eval(query)
         end
     end
     
@@ -35,6 +43,15 @@ class Network::Avenue < ApplicationRecord
     
     validates :url, presence: true
     validate :url_string
+    
+    def query_array=(arr)
+        @query_array = arr
+        if arr.nil?
+            self.query = nil
+        else
+            self.query = @query_array.to_s
+        end
+    end
     
     # returns :file's host name
     def host_name
