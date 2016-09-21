@@ -42,6 +42,14 @@ class Network::Access < ApplicationRecord
     validates :avenue, presence: true
     
     validates :request_headers, presence: true
+    
+    def request_auxillary_headers_hash
+        @request_auxillary_headers_hash
+    end
+    
+    def response_headers_hash
+        @response_headers_hash
+    end
       
     def request_auxillary_headers_hash=(hash)
         @request_auxillary_headers_hash = hash
