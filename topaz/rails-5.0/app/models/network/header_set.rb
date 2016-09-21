@@ -7,6 +7,10 @@ class Network::HeaderSet < ApplicationRecord
     
     before_validation :verify_inclusions
     before_validation :verify_headers
+      
+    after_initialize do
+        @headers_string_hash = eval(headers_string)
+    end
     
     after_initialize do |header_set|
         @headers_string_hash = eval(headers_string)
@@ -15,6 +19,11 @@ class Network::HeaderSet < ApplicationRecord
     validates :headers_string, presence: true
     validate :valid_headers
     validate :match_headers
+      
+    def headers_string_hash=(hash)
+        @headers_string_hash = hash
+        self.headers_string = @headers_string_hash.to_s
+    end
     
     def headers_string_hash=(hash)
         @headers_string_hash = hash

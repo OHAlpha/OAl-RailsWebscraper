@@ -26,7 +26,7 @@ class Network::Access < ApplicationRecord
         end
     end
     
-    after_initialize do |header_set|
+    after_initialize do
         @request_auxillary_headers_hash = eval(request_auxillary_headers)
         if not response_headers.nil?
             @response_headers_hash = eval(response_headers)
@@ -42,6 +42,20 @@ class Network::Access < ApplicationRecord
     validates :avenue, presence: true
     
     validates :request_headers, presence: true
+      
+    def request_auxillary_headers_hash=(hash)
+        @request_auxillary_headers_hash = hash
+        self.request_auxillary_headers = @request_auxillary_headers_hash.to_s
+    end
+    
+    def response_headers_hash=(hash)
+        @response_headers_hash = hash
+        if hash.nil?
+            self.response_headers = nil
+        else
+            self.response_headers = @response_headers_hash.to_s
+        end
+    end
     
     def request_auxillary_headers_hash=(hash)
         @request_auxillary_headers_hash = hash

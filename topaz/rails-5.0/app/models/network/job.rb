@@ -82,6 +82,15 @@ class Network::Job < ApplicationRecord
         end
     end
     
+    def self.skip_priority
+    end
+    
+    def self.increment_priority(priority)
+    end
+    
+    def self.decrement_priority(priority)
+    end
+    
     def self.initial_status
         1
     end
@@ -107,10 +116,13 @@ class Network::Job < ApplicationRecord
     end
     
     def self.status_message(code)
+<<<<<<< HEAD
         states = {}
         states[initial_status.to_s] = "not started"
         states[completed_status.to_s] = "completed"
         states[code.to_s]
+=======
+>>>>>>> ssh-github/feat.000
     end
     
 end
