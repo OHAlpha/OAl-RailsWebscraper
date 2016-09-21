@@ -1,9 +1,3 @@
-$(document).ready(iterate_delegates);
-
-iterate_delegates = ->
-    delegates = $('article.delegate');
-    delegates.each(fetch_delegate);
-
 fetch_delegate = ->
     jel = $(@);
     url = jel.attr('data-delegate-url');
@@ -13,3 +7,9 @@ fetch_delegate = ->
     req.onload = -> jel.html(@.responseText)
     req.open("GET",url+query);
     req.send();
+
+iterate_delegates = ->
+    delegates = $('article.delegate');
+    delegates.each(fetch_delegate);
+
+$(document).ready(iterate_delegates);
