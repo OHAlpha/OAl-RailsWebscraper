@@ -14,4 +14,3 @@ fetch_delegate = ->
     req.open("GET",url+query);
     //req.responseType = "document";
     req.send();
-}
